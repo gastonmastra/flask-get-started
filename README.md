@@ -9,7 +9,7 @@ In this case, we set the environment variables by adding them to their correspon
 The database is 
 
 SQLAlchemy connection string: As the official documentation say, the connection string follow this structure: 
-dialect+driver://username:password@host:port/database
+`dialect+driver://username:password@host:port/database`
 In this case, we are using the next values
 ```
 dialect = postgresql

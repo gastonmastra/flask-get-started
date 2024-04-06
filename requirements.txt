@@ -1,0 +1,9 @@
+flask
+flask-graphql
+flask-migrate
+sqlalchemy
+graphene
+graphene-sqlalchemy
+psycopg2-binary
+
+flask-script==2.0.5

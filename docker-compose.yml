@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  app: 
+    build: .
+    container_name: app
+    ports:
+      - "5001:5001"
+    volumes:
+     - ./:/app/
+    environment:
+      - DB_USERNAME=test_postgress
+      - DB_PASSWORD=Pass!123
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_DATABASE=test
+      - ENV=DEVELOPMENT
+    networks:
+      - prueba
+
+  db:
+    container_name: database
+    image: postgres:14-alpine
+    ports:
+      - "5433:5432"
+    expose:
+      - "5432"
+    volumes:
+      - ./db/:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=Pass!123
+      - POSTGRES_USER=test_postgress
+      - POSTGRES_DB=test
+    networks:
+      - prueba
+
+networks:
+  prueba:
